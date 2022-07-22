@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form action="" method="post">
+    {% csrf_token %}
+    {% for task in task_post %}
+      {% enf for %}
+      {{form.as_p}}
+    <a href="{% url 'todo:update' task.slug %}">Update</a>
+    {% end for %}
+
+    <input type="submit"  value="Update">
+  </form>
+
+{% endblock content %}
